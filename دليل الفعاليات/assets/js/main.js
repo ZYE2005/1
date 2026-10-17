@@ -96,7 +96,8 @@ const events = [
 ];
 
 let dotContainer = document.querySelector(".dot");
-let currentEvent = 0 ;
+let currentEvent = 0;
+let sliderTransitionTimeout;
 // GeneratDots Slider
 function GeneratDots() {
   for (let i = 0; i < events.length; i++) {
@@ -105,7 +106,6 @@ function GeneratDots() {
       `;
   }
 
- 
   setupDotListeners();
 }
 
@@ -116,71 +116,65 @@ function setupDotListeners() {
     dot.addEventListener("click", (e) => {
       let id = parseInt(e.target.getAttribute("data-id"));
 
-   
       dots.forEach((d) => d.classList.remove("active"));
 
-  //  أضافة كلاس active
+      //  أضافة كلاس active
       e.target.classList.add("active");
 
       currentEvent = id;
-      
+
       handle(id);
     });
   });
 
-  
   // تفعيل كلاس ال active لاول نقطة وعرض اول حدث
   if (dots.length > 0) {
     dots[0].classList.add("active");
-    handle(0); 
+    handle(0);
   }
 }
-
-
 
 function handle(id) {
   let event = events[id];
-  let imgSlider = document.querySelector(".img-fluid");
-  let text_container = document.querySelector(".text_container");
-  let paragraph_container = document.querySelector(".paragraph_container");
-  let data_container = document.querySelector(".data_container");
-  let place_container = document.querySelector(".place_container");
+  let slider = document.querySelector(".bootom_slider");
 
-  imgSlider.src = event.image;
-  text_container.innerHTML = event.title;
-  paragraph_container.innerHTML = event.description;
-  data_container.innerHTML = event.dateText;
-  place_container.innerHTML = event.place;
-}
-
-// تمرير تلقائي
-
-setInterval(() => {
-  currentEvent++;
-  if (currentEvent > 7) {
-    currentEvent = 0;
+  if (!slider) {
+    return;
   }
 
-  // تحديث الـ dots
-  let dots = document.querySelectorAll(".dot span");
-  dots.forEach((d) => d.classList.remove("active"));
-  dots[currentEvent].classList.add("active");
+  let imgSlider = slider.querySelector(".img-fluid");
+  let text_container = slider.querySelector(".text_container");
+  let paragraph_container = slider.querySelector(".paragraph_container");
+  let data_container = slider.querySelector(".data_container");
+  let place_container = slider.querySelector(".place_container");
 
-  // استدعاء handle لتحديث المحتوى
-  handle(currentEvent);
-
-  console.log(currentEvent);
-}, 4000);
-
-
-// هي المساحة للمحترم لاياد لصفحة ال eventa
-
-// *********************************
-
-// هي المساحة للمحترم لاياد لصفحة ال eventa
-
-
+  slider.classList.add("is-transitioning");
+  clearTimeout(sliderTransitionTimeout);
+  sliderTransitionTimeout = setTimeout(() => {
+    imgSlider.src = event.image;
+    text_container.innerHTML = event.title;
+    paragraph_container.innerHTML = event.description;
+    data_container.innerHTML = event.dateText;
+    place_container.innerHTML = event.place;
+    slider.classList.remove("is-transitioning");
+  }, 180);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (!dotContainer) {
+    return;
+  }
+
   GeneratDots();
+
+  // تمرير تلقائي
+  setInterval(() => {
+    currentEvent = (currentEvent + 1) % events.length;
+
+    let dots = document.querySelectorAll(".dot span");
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[currentEvent].classList.add("active");
+
+    handle(currentEvent);
+  }, 6000);
 });

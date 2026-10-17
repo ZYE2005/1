@@ -119,6 +119,7 @@ main .hero {
 main .hero::after {
   content: "";
   position: absolute;
+  pointer-events: none;
   width: 420px;
   height: 420px;
   border: 70px solid #ffffff12;

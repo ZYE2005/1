@@ -181,6 +181,7 @@ main .hero .container .left_hero a:hover {
   background-color: #cbd5e1;
   border-radius: 50%;
   cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .slider .container .top_slider .dot span.active {
@@ -188,6 +189,19 @@ main .hero .container .left_hero a:hover {
   width: 25px;
   border-radius: 10px;
 }
+
+.slider .container .bootom_slider .box_img img,
+.slider .container .bootom_slider .box_info {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.slider .container .bootom_slider.is-transitioning .box_img img,
+.slider .container .bootom_slider.is-transitioning .box_info {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+
 
 .slider .container .bootom_slider {
   background-color: var(--color-info);

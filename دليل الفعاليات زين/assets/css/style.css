@@ -729,6 +729,7 @@ border-radius: 20px;;
 
 
 
+/* about page */
 
 
 /* الصندوق الرئيسي الذي يحمل الخلفية */
@@ -747,9 +748,9 @@ border-radius: 20px;;
 
 /* صورة الفريق */
 .team-photo {
-  display: block;
-  width: 400px;
-  height: 350px;
+  display: flex;
+
+  width: 600px;
   object-fit: cover;
   border-radius: 20%;
   margin: 0 auto;
@@ -772,4 +773,27 @@ border-radius: 20px;;
 .card-text {
   line-height: 1.8;
   font-size: 20px;
+}
+
+
+
+
+.about-page-section section div {
+  display: block;
+  gap: 20px;
+  justify-content: space-between;
+align-items: center;
+  margin-top: 30px;
+  align-items:center;
+}
+
+.name-card-img-top {
+  width: 30px;  
+}
+
+#between-box{
+
+gap: 40PX;
+
+
 }

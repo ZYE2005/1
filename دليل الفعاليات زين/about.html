@@ -81,29 +81,89 @@
     <main>
       <section class="hero">
         <div
-          class="container d-flex flex-column flex-lg-row align-items-center gap-4 justify-content-between"
+          class="container d-flex flex-column align-items-center gap-4 justify-content-between"
         >
-          <img
-            src="دليل الفعاليات زين/assets/img/our-team.png"
-            alt="our team"
-          />
+          <section class="about-section">
+            <img
+              src="assets/img/our-team.png"
+              alt="صورة فريق العمل"
+              class="team-photo"
+            />
 
-          <div class="content">
-            <p class="markPara">من نحن</p>
+            <h1
+              class="text-center mt-4"
+              style="color: #166d70; border-bottom: 3px solid white"
+            >
+              من نحن؟
+            </h1>
 
-            <p>
-              نحن منصة جامعية متكاملة تهدف إلى توثيق ونشر كافة الفعاليات
+            <p class="text-center intro">
+              نحن منصة جامعية متكاملة تهدف إلى توثيق ونشر كافة الفعاليات <br />
               العائلية و الثقافية و الرياضية في الجامعة الافتراضية السورية
               بأسلوب عصري ومنظم
             </p>
 
-            <h1>فريق العمل :</h1>
-            <p>زين حمزه</p>
-            <p>يامن مسالخي</p>
-            <p>إياد البرازي</p>
-          </div>
+            <h2
+              class="text-center mb-4"
+              style="color: #166d70; border-bottom: 3px solid white"
+            >
+              أعضاء الفريق
+            </h2>
+
+            <div class="row g-4 justify-content-center">
+              <!-- الصندوق الأول -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm" style="background-color:#f5f0e86e">
+                  <div class="card-body text-center">
+                    <h3 class="card-title">إياد البرازي</h3>
+                    <h3 class="card-title">eyad_284331</h3>
+
+                    <p class="card-text">
+                      صفحة رئيسية + صفحة الفعاليات  + JavaScript + bootstrap + مدير المصارف + تنسيق
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- الصندوق الثاني -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm" style="background-color:#f5f0e86e">
+                  <div class="card-body text-center">
+                    <h3 class="card-title">يامن مسالخي</h3>
+                    <h3 class="card-title">yamen_283698</h3>
+
+                    <p class="card-text">فعاليات + Javascript + تنسيق صور + أسياد التصميم الميكانيكي
+
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- الصندوق الثالث -->
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm"  style="background-color:#f5f0e86e ">
+                  <div class="card-body text-center">
+                    <h3 class="card-title">زين حمزه</h3>
+                    <h3 class="card-title">zen_302908</h3>
+
+                    <p class="card-text">
+                    صفحة الدليل + محاسب و مصور وعازف ايقاع محنك + كاشير ايرورز + تنسيق
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <br><br>
+          <div><a href="/index.html" style="color: #c8ad44 ; text-decoration: none;  font-size: 35px;font-weight: bold;"  >الرئيسية</a>
+                </div>
         </div>
+
+        
       </section>
+
+
+
     </main>
 
     <footer class="py-4">
@@ -119,16 +179,7 @@
             />
           </div>
 
-          <div
-            class="col-12 col-md-4 d-flex flex-column align-items-center gap-2"
-          >
-            <h5>روابط سريعة</h5>
-            <a href="events.html">كل الفعاليات</a>
-            <a href="about.html">عن الدليل</a>
-            <a href="contact.html">اتصل بنا</a>
-          </div>
-
-          <div
+        <div
             class="col-12 col-md-4 d-flex flex-column align-items-center gap-2"
           >
             <h5>تواصل معنا</h5>
@@ -141,12 +192,19 @@
             </div>
           </div>
         </div>
+        </div>
 
+
+        
         <span class="d-block text-center text-md-start"
           >© 2026 دليل فعاليات الجامعة الافتراضية. جميع الحقوق محفوظة.</span
         >
       </div>
     </footer>
+
+    <div class="topBar">
+      <i class="fa-solid fa-arrow-up"></i>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>

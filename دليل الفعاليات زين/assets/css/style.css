@@ -715,3 +715,61 @@ footer span {
   outline: 3px solid var(--color-focus);
   outline-offset: 3px;
 }
+
+
+.img-team img {
+gap: 20px;
+justify-content: space-between;
+display: flex;
+width: 600px;
+border: 3px solid #00577a;
+border-radius: 20px;;
+}
+
+
+
+
+
+
+/* الصندوق الرئيسي الذي يحمل الخلفية */
+.about-main {
+  width: min(1100px, calc(100% - 32px));
+  margin: 30px auto;
+  padding: 30px 20px;
+  background-color: #f1f3f5;
+  border-radius: 15px;
+}
+
+/* القسم الداخلي */
+.about-section {
+  width: 100%;
+}
+
+/* صورة الفريق */
+.team-photo {
+  display: block;
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20%;
+  margin: 0 auto;
+}
+
+/* النص التعريفي */
+.intro {
+  margin-bottom: 35px;
+  line-height: 2;
+  font-size: 25px;
+  color: white;
+}
+
+/* عناوين الصناديق */
+.card-title {
+  margin-bottom: 15px;
+}
+
+/* النص داخل الصناديق */
+.card-text {
+  line-height: 1.8;
+  font-size: 20px;
+}

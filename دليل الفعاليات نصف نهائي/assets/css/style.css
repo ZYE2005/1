@@ -727,42 +727,8 @@ border-radius: 20px;;
 }
 
 
-
-
 /* about page */
 
-
-/* الصندوق الرئيسي الذي يحمل الخلفية */
-.about-main {
-  width: min(1100px, calc(100% - 32px));
-  margin: 30px auto;
-  padding: 30px 20px;
-  background-color: #f1f3f5;
-  border-radius: 15px;
-}
-
-/* القسم الداخلي */
-.about-section {
-  width: 100%;
-}
-
-/* صورة الفريق */
-.team-photo {
-  display: flex;
-
-  width: 600px;
-  object-fit: cover;
-  border-radius: 20%;
-  margin: 0 auto;
-}
-
-/* النص التعريفي */
-.intro {
-  margin-bottom: 35px;
-  line-height: 2;
-  font-size: 25px;
-  color: white;
-}
 
 /* عناوين الصناديق */
 .about_title {
@@ -777,27 +743,6 @@ border-radius: 20px;;
 }
 
 
-
-
-.about-page-section section div {
-  display: block;
-  gap: 20px;
-  justify-content: space-between;
-align-items: center;
-  margin-top: 30px;
-  align-items:center;
-}
-
-.name-card-img-top {
-  width: 30px;  
-}
-
-#between-box{
-
-gap: 40PX;
-
-
-}
 .about-cardsul {
     padding: 0;
     margin: 0;
@@ -806,22 +751,25 @@ gap: 40PX;
     flex-direction: column;
     font-size: 20px;
 }
+
 .about_cards .container {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 25px;
 }
+
 .about_cards .container .card {
   width: 250px;
   transition: 0.3s;
 }
+
 .about_cards .container .card:hover {
   
     transform: translateY(-10px);
 }
 
-.about_cards .container .card .card-body ul li{
+.about_cards .container .card .card-body ul li {
     background-color: #a66a16;
     border: transparent solid 1px;
     border-radius: 20px;
@@ -829,7 +777,7 @@ gap: 40PX;
     color: #fff;
     text-align: center;
 }
-.about_main_link{
+.about_main_link {
     padding: 10px 20px 10px 20px;
     color: #3f403d;
     text-decoration: none;
@@ -839,6 +787,7 @@ gap: 40PX;
     border: 2px solid;
     border-radius: 58px;
 }
+
 .about_main_link:hover {
   transform: translateY(-10px);
 }

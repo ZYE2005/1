@@ -107,6 +107,7 @@ const events = [
 const dotContainer = document.querySelector(".dot");
 let currentEvent = 0;
 let sliderTransitionTimeout;
+let sliderAutoplayTimeout;
 
 const categoriesLinks = document.querySelectorAll(".section-bottom .box");
 const containerCard = document.querySelector(".events_card .container");
@@ -211,6 +212,7 @@ function setupDotListeners() {
 
       currentEvent = index;
       handle(index);
+      scheduleSliderAdvance();
     });
   });
 
@@ -247,6 +249,20 @@ function handle(index) {
 
     slider.classList.remove("is-transitioning");
   }, 180);
+}
+
+function scheduleSliderAdvance() {
+  clearTimeout(sliderAutoplayTimeout);
+  sliderAutoplayTimeout = setTimeout(() => {
+    currentEvent = (currentEvent + 1) % events.length;
+
+    const dots = document.querySelectorAll(".dot span");
+    dots.forEach((dot) => dot.classList.remove("active"));
+    dots[currentEvent]?.classList.add("active");
+
+    handle(currentEvent);
+    scheduleSliderAdvance();
+  }, 6000);
 }
 
 // تطبيق التصنيف والتاريخ والموقع معًا
@@ -327,19 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (dotContainer) {
     generateDots();
-
-    // تغيير السلايدر تلقائيًا كل 6 ثوانٍ
-    setInterval(() => {
-      currentEvent = (currentEvent + 1) % events.length;
-
-      const dots = document.querySelectorAll(".dot span");
-
-      if (dots.length > 0) {
-        dots.forEach((dot) => dot.classList.remove("active"));
-        dots[currentEvent].classList.add("active");
-        handle(currentEvent);
-      }
-    }, 6000);
+    scheduleSliderAdvance();
   }
 });
 //عند تحميل الصفحة يأخذ العنصر بالأي دي المذكور
@@ -363,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   //يرتب الاحداث حسب القدم
 
-  const latestEvents =availableEvents.slice(0, 5);
+  const latestEvents = availableEvents.slice(0, 5);
   //يبدء بتوليد الكروت
 
   //ينشئ الكارد حسب البوتستراب
@@ -443,8 +447,7 @@ document.addEventListener("click", (event) => {
 });
 
 const addToCalendar = document.querySelector(".event-details-addbtn");
-addToCalendar.addEventListener("click", (event) => {
-
+addToCalendar?.addEventListener("click", () => {
   const alert = document.createElement("div");
   alert.className = `form-alert alert alert-info alert-dismissible fade show position-fixed top-0 end-0 m-3 shadow`;
   alert.setAttribute("role", "alert");
@@ -464,5 +467,3 @@ addToCalendar.addEventListener("click", (event) => {
 
   setTimeout(() => alert.remove(), 6000);
 });
-
-

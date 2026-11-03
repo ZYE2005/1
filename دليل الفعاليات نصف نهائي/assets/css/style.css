@@ -628,6 +628,15 @@ footer span {
   overflow: hidden;
 }
 
+.category_span {
+  margin-top: -19px;
+  background-color: var(--color-accent);
+  width: fit-content;
+  padding: 4px;
+  border-radius: 10px;
+  color: white;
+}
+
 .events_card .container .card .card-body .event_meta {
   display: flex;
   flex-direction: column;

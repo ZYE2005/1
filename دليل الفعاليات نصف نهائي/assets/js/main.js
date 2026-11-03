@@ -256,6 +256,7 @@ function filterEvents() {
 
         <div class="card-body">
           <h3 class="card-title">${event.title}</h3>
+          <span class="category_span">${event.category}</span>
           <div class="event_meta">
             <span>
               <i class="fas fa-calendar"></i>
